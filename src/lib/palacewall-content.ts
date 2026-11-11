@@ -104,6 +104,7 @@ export type ContentPage = {
   subtitle: string;
   introduction: string[];
   sections: ContentSection[];
+  brandShowcase?: BrandShowcaseItem[];
   feature?: { label: string; title: string; copy: string; note?: string };
   closing?: string;
   caution?: string;
