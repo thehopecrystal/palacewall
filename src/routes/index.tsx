@@ -26,7 +26,7 @@ function HomePage() {
         <div className="grid items-end gap-10 md:grid-cols-[1.25fr_.75fr] md:gap-16">
           <div>
             <p className="pw-kicker">Canada <span aria-hidden="true">/</span> Nigeria <span aria-hidden="true">/</span> International markets</p>
-            <h1 className="pw-display mt-7 max-w-4xl text-primary">Connecting<br />continents<span className="text-accent">.</span><br />Creating opportunity.</h1>
+            <h1 className="pw-display mt-7 max-w-4xl text-primary"><span>Connecting</span><br /><span>continents<span className="text-accent">.</span></span><br /><span>Creating</span><br /><span>opportunities.</span></h1>
           </div>
           <div className="max-w-lg pb-1 md:justify-self-end">
             <p className="text-lg leading-8 text-muted-foreground">A diversified international enterprise bringing media, sports, consumer brands, and business opportunities into conversation across borders.</p>
@@ -110,7 +110,7 @@ function HomePage() {
           <p className="pw-kicker !text-sage">Featured project</p>
           <div className="grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[.12em] opacity-65">Film development</p>
+              <p className="text-xs uppercase opacity-65">Film development</p>
               <h2 className="mt-4 font-display text-3xl font-medium leading-tight md:text-5xl">The Godfather of Benin City</h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 opacity-75">An original Palacewall film development project exploring power, family, heritage, loyalty, and influence within the cultural and historical environment of Benin City, Nigeria.</p>
             </div>

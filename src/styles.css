@@ -78,24 +78,24 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.967 0.0082 91.48);
+  --background: oklch(0.982 0.004 220);
   --foreground: oklch(0.235 0.024 245.95);
-  --card: oklch(0.99 0.003 90);
+  --card: oklch(0.997 0.002 220);
   --card-foreground: oklch(0.235 0.024 245.95);
-  --popover: oklch(0.99 0.003 90);
+  --popover: oklch(0.997 0.002 220);
   --popover-foreground: oklch(0.235 0.024 245.95);
   --primary: oklch(0.356 0.0714 245.95);
   --primary-foreground: oklch(0.98 0.004 90);
   --secondary: oklch(0.6961 0.0558 182.45);
   --secondary-foreground: oklch(0.235 0.024 245.95);
-  --muted: oklch(0.94 0.012 90);
+  --muted: oklch(0.948 0.012 195);
   --muted-foreground: oklch(0.47 0.022 245);
   --accent: oklch(0.6917 0.1473 34.49);
   --accent-foreground: oklch(0.18 0.025 245);
   --destructive: oklch(0.55 0.2 26);
   --destructive-foreground: oklch(0.98 0.004 90);
-  --border: oklch(0.85 0.018 90);
-  --input: oklch(0.85 0.018 90);
+  --border: oklch(0.87 0.012 220);
+  --input: oklch(0.87 0.012 220);
   --ring: oklch(0.48 0.08 245);
   --coral: oklch(0.6917 0.1473 34.49);
   --sage: oklch(0.6961 0.0558 182.45);
@@ -185,9 +185,9 @@
 .pw-brand-mark { display: grid; place-items: center; width: 2.55rem; aspect-ratio: 1; background: var(--color-primary); color: var(--color-primary-foreground); font: 600 1.05rem var(--font-display); }
 .pw-nav-link { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--color-muted-foreground); font-size: .83rem; transition: color .2s ease; }
 .pw-nav-link:hover, .pw-nav-link[data-active="true"] { color: var(--color-primary); }
-.pw-kicker { color: var(--color-accent); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
-.pw-display { font: 500 clamp(3.2rem, 7vw, 6.8rem)/.94 var(--font-display); letter-spacing: 0; }
-.pw-display-sm { font: 500 clamp(2.5rem, 5vw, 4.8rem)/.99 var(--font-display); letter-spacing: 0; }
+.pw-kicker { color: var(--color-accent); font-size: .72rem; font-weight: 700; text-transform: uppercase; }
+.pw-display { font: 500 6.5rem/.94 var(--font-display); letter-spacing: 0; }
+.pw-display-sm { font: 500 4.8rem/.99 var(--font-display); letter-spacing: 0; }
 .pw-hero-image { display: block; width: 100%; aspect-ratio: 16 / 7.2; object-fit: cover; object-position: center 43%; }
 .pw-editorial-rule { border-top: 1px solid var(--color-border); }
 .pw-number { font: 500 1rem var(--font-display); color: var(--color-accent); }
@@ -202,6 +202,8 @@
 @media (max-width: 767px) {
   .pw-container { width: min(100% - 2rem, 78rem); }
   .pw-hero-image { aspect-ratio: 4 / 3; }
+  .pw-display { font-size: 3.35rem; }
+  .pw-display-sm { font-size: 3rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
