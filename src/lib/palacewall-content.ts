@@ -1,3 +1,8 @@
+import casaJadeWineImage from "@/assets/casa-jade-wine.png.asset.json";
+import edoFacesImage from "@/assets/edofaces-radio.png.asset.json";
+import kayluvasBrandImage from "@/assets/kayluvas-brand.png.asset.json";
+import kayluvasProductImage from "@/assets/kayluvas-products.png.asset.json";
+
 export const navigation = [
   { label: "About", to: "/about" as const },
   { label: "Film & TV", to: "/film-television" as const },
@@ -56,19 +61,19 @@ export const affiliations = [
     copy: "A community-focused, not-for-profit organization dedicated to supporting vulnerable individuals and families, including refugees, asylum seekers, newcomers, and people experiencing housing insecurity.",
   },
   {
-    name: "Edofaces",
-    line: "Celebrating identity. Connecting communities.",
-    copy: "An affiliated Palacewall venture reflecting the importance of cultural connection, community engagement, and the celebration of heritage. Further details will follow as its profile is finalized.",
+    name: "Edo Faces Radio",
+    line: "Our heritage. Our voices. Our radio.",
+    copy: "A Palacewall brand celebrating Edo heritage through radio and media.",
   },
   {
-    name: "Kay Luvas",
-    line: "A Palacewall consumer brand.",
-    copy: "A separately identified brand in the Palacewall portfolio, focused on proposed personal care and wellness products.",
+    name: "Kayluvas",
+    line: "Chat. Meet. Date.",
+    copy: "A Palacewall brand with a premium latex condom product shown in its supplied imagery.",
   },
   {
-    name: "Casa Jade Reserva",
-    line: "A premium beverage brand concept.",
-    copy: "A proposed wine brand concept inspired by elegance and tradition. Production, sourcing, distribution, and availability remain subject to applicable requirements.",
+    name: "Casa Jade Wine",
+    line: "Casa Jade Reserva · Sweet red wine",
+    copy: "A Palacewall wine brand represented by the Casa Jade Reserva bottle and label imagery.",
   },
   {
     name: "Palacewall Home Technology",
@@ -82,12 +87,24 @@ export type ContentSection = {
   items: { title: string; copy: string }[];
 };
 
+export type BrandShowcaseItem = {
+  name: string;
+  tagline: string;
+  copy: string;
+  website: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  brandMark?: string;
+};
+
 export type ContentPage = {
   kicker: string;
   title: string;
   subtitle: string;
   introduction: string[];
   sections: ContentSection[];
+  brandShowcase?: BrandShowcaseItem[];
   feature?: { label: string; title: string; copy: string; note?: string };
   closing?: string;
   caution?: string;
@@ -196,13 +213,41 @@ export const contentPages = {
     subtitle: "Exploring selected categories and international markets.",
     introduction: [
       "Palacewall's commercial interests extend into the development, branding, and marketing of specialized consumer products.",
-      "We seek to create distinctive brands that combine functionality, thoughtful design, market awareness, and consumer appeal. Our proposed portfolio reflects interests in home technology, personal wellness, feminine hygiene, and premium beverages.",
+      "Palacewall's brand portfolio brings together consumer products, wine, and media. Explore Kayluvas, Edo Faces Radio, and Casa Jade Wine below.",
     ],
+    brandShowcase: [
+      {
+        name: "Kayluvas",
+        tagline: "Chat. Meet. Date.",
+        copy: "A Palacewall brand with a premium latex condom product shown in its supplied imagery.",
+        website: "kayluvas.com",
+        href: "https://kayluvas.com",
+        image: kayluvasProductImage.url,
+        imageAlt: "Kayluvas premium latex condom packaging",
+        brandMark: kayluvasBrandImage.url,
+      },
+      {
+        name: "Edo Faces Radio",
+        tagline: "Our heritage. Our voices. Our radio.",
+        copy: "A Palacewall media brand celebrating Edo heritage and radio.",
+        website: "edofaces.com",
+        href: "https://edofaces.com",
+        image: edoFacesImage.url,
+        imageAlt: "Edo Faces Radio brand artwork",
+      },
+      {
+        name: "Casa Jade Wine",
+        tagline: "Casa Jade Reserva · Sweet red wine",
+        copy: "A Palacewall wine brand represented by the Casa Jade Reserva bottle and label imagery.",
+        website: "casajadewine.com",
+        href: "https://casajadewine.com",
+        image: casaJadeWineImage.url,
+        imageAlt: "Casa Jade Reserva red wine bottle",
+      },
+    ] satisfies BrandShowcaseItem[],
     sections: [
       { heading: "In development", items: [
         { title: "Palacewall Home Technology", copy: "A proposed product line focused on practical household solutions. The Socket Fanlight concept combines LED lighting and fan functionality for compatible fixtures. Product in development; final specifications and availability will be announced following evaluation." },
-        { title: "Kay Luvas", copy: "A consumer brand centered on personal care, comfort, confidence, and wellness. Proposed products include intimate wellness and feminine hygiene essentials. Products are under development and subject to applicable regulatory, safety, and quality requirements." },
-        { title: "Casa Jade Reserva", copy: "A premium wine brand concept inspired by elegance and tradition. Production, sourcing, distribution, and market availability are subject to applicable licensing and regulatory requirements." },
       ] },
       { heading: "Product development philosophy", items: [
         { title: "Thoughtful development", copy: "We believe successful consumer brands begin with understanding market needs, product identity, and consumer expectations." },
@@ -210,7 +255,7 @@ export const contentPages = {
         { title: "Exploring new markets", copy: "We intend to explore opportunities for product development, manufacturing partnerships, distribution, and commercialization in Canada, Nigeria, and other suitable markets." },
       ] },
     ],
-    caution: "Products and brands described here are proposals or concepts, not announcements of availability, approvals, specifications, or product launches.",
+    caution: "Product availability, specifications, regulatory approvals, and licensing depend on the product and market.",
   },
   affiliates: {
     kicker: "Our affiliated organizations",

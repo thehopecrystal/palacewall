@@ -126,7 +126,7 @@ function HomePage() {
         <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <h2 className="font-display text-3xl font-medium leading-tight text-primary md:text-5xl">Independent ventures. Shared values.</h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">Human Angle Initiatives, Edofaces, Kay Luvas, Casa Jade Reserva, and Palacewall Home Technology reflect a varied network of organizations and brand concepts.</p>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">Edo Faces Radio, Kayluvas, Casa Jade Wine, and Palacewall Home Technology reflect the range of brands and ideas across our portfolio.</p>
           </div>
           <Button asChild variant="outline" className="gap-2"><Link to="/affiliates">Meet the family <ArrowRight aria-hidden="true" /></Link></Button>
         </div>

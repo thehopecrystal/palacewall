@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import type { ContentPage } from "@/lib/palacewall-content";
@@ -25,6 +25,35 @@ export function PalacewallContentPage({ page }: { page: ContentPage }) {
           {page.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
+
+      {page.brandShowcase && (
+        <section className="pw-container pw-editorial-rule py-14 md:py-20" aria-labelledby="brand-showcase-title">
+          <div className="mb-8 grid gap-4 md:grid-cols-[.34fr_1fr] md:gap-14">
+            <p className="pw-kicker">Palacewall portfolio</p>
+            <h2 id="brand-showcase-title" className="font-display text-2xl font-medium text-primary md:text-3xl">Brands under Palacewall</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {page.brandShowcase.map((brand) => (
+              <article key={brand.name} className="overflow-hidden border border-border bg-card">
+                <div className="flex aspect-[4/3] items-center justify-center bg-muted p-5">
+                  <img src={brand.image} alt={brand.imageAlt} className="h-full w-full object-contain" loading="lazy" />
+                </div>
+                <div className="flex min-h-52 flex-col p-5">
+                  {brand.brandMark && <img src={brand.brandMark} alt="Kayluvas" className="mb-4 h-8 max-w-40 object-contain object-left" loading="lazy" />}
+                  <h3 className="font-display text-xl font-medium text-foreground">{brand.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-accent">{brand.tagline}</p>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{brand.copy}</p>
+                  <Button asChild variant="outline" size="sm" className="mt-5 w-fit gap-2">
+                    <a href={brand.href} target="_blank" rel="noreferrer" aria-label={`Visit ${brand.website} (opens in a new tab)`}>
+                      {brand.website}<ExternalLink aria-hidden="true" />
+                    </a>
+                  </Button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       {page.feature && (
         <section className="bg-primary text-primary-foreground">
