@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project architecture
+- Keep each public page in a file-based route with its own metadata; render editorial business-page content from typed shared content data so page structure stays consistent.
