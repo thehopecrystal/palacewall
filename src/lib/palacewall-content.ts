@@ -93,7 +93,7 @@ export type ContentPage = {
   caution?: string;
 };
 
-export const contentPages: Record<string, ContentPage> = {
+export const contentPages = {
   about: {
     kicker: "About Palacewall",
     title: "A vision beyond borders.",
@@ -297,4 +297,4 @@ export const contentPages: Record<string, ContentPage> = {
     closing: "We look forward to exploring opportunities for professional collaboration.",
     caution: "Email, telephone, and office address details were marked “To be published” in the supplied brief.",
   },
-};
+} satisfies Record<string, ContentPage>;
