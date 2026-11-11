@@ -338,8 +338,8 @@ export const contentPages = {
         { title: "Media, public relations & community", copy: "Media inquiries and community-focused initiatives." },
       ] },
     ],
-    feature: { label: "General inquiries", title: "Official contact details", copy: "Website: www.palacewall.com\nEmail: To be published\nTelephone: To be published\nCanadian office address: To be published\nNigerian office address: To be published" },
+    feature: { label: "General inquiries", title: "Official contact details", copy: "Website: www.palacewall.com\nEmail: info@palacewall.com\nTelephone: To be published\nCanadian office address: To be published\nNigerian office address: To be published" },
     closing: "We look forward to exploring opportunities for professional collaboration.",
-    caution: "Email, telephone, and office address details were marked “To be published” in the supplied brief.",
+    caution: "Telephone and office address details are to be published.",
   },
 } satisfies Record<string, ContentPage>;
