@@ -9,27 +9,245 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AffiliatesRouteImport } from './routes/affiliates'
+import { Route as BroadcastingDigitalMediaRouteImport } from './routes/broadcasting-digital-media'
+import { Route as ConsumerBrandsRouteImport } from './routes/consumer-brands'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FilmTelevisionRouteImport } from './routes/film-television'
+import { Route as NewsroomRouteImport } from './routes/newsroom'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
+import { Route as SportsManagementRouteImport } from './routes/sports-management'
 
-export interface FileRoutesByFullPath {}
-export interface FileRoutesByTo {}
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliatesRoute = AffiliatesRouteImport.update({
+  id: '/affiliates',
+  path: '/affiliates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BroadcastingDigitalMediaRoute =
+  BroadcastingDigitalMediaRouteImport.update({
+    id: '/broadcasting-digital-media',
+    path: '/broadcasting-digital-media',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ConsumerBrandsRoute = ConsumerBrandsRouteImport.update({
+  id: '/consumer-brands',
+  path: '/consumer-brands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FilmTelevisionRoute = FilmTelevisionRouteImport.update({
+  id: '/film-television',
+  path: '/film-television',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsroomRoute = NewsroomRouteImport.update({
+  id: '/newsroom',
+  path: '/newsroom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsManagementRoute = SportsManagementRouteImport.update({
+  id: '/sports-management',
+  path: '/sports-management',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/broadcasting-digital-media': typeof BroadcastingDigitalMediaRoute
+  '/consumer-brands': typeof ConsumerBrandsRoute
+  '/contact': typeof ContactRoute
+  '/film-television': typeof FilmTelevisionRoute
+  '/newsroom': typeof NewsroomRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/sports-management': typeof SportsManagementRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/broadcasting-digital-media': typeof BroadcastingDigitalMediaRoute
+  '/consumer-brands': typeof ConsumerBrandsRoute
+  '/contact': typeof ContactRoute
+  '/film-television': typeof FilmTelevisionRoute
+  '/newsroom': typeof NewsroomRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/sports-management': typeof SportsManagementRoute
+}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/broadcasting-digital-media': typeof BroadcastingDigitalMediaRoute
+  '/consumer-brands': typeof ConsumerBrandsRoute
+  '/contact': typeof ContactRoute
+  '/film-television': typeof FilmTelevisionRoute
+  '/newsroom': typeof NewsroomRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/sports-management': typeof SportsManagementRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: never
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/broadcasting-digital-media'
+    | '/consumer-brands'
+    | '/contact'
+    | '/film-television'
+    | '/newsroom'
+    | '/partnerships'
+    | '/sports-management'
   fileRoutesByTo: FileRoutesByTo
-  to: never
-  id: '__root__'
+  to:
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/broadcasting-digital-media'
+    | '/consumer-brands'
+    | '/contact'
+    | '/film-television'
+    | '/newsroom'
+    | '/partnerships'
+    | '/sports-management'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/broadcasting-digital-media'
+    | '/consumer-brands'
+    | '/contact'
+    | '/film-television'
+    | '/newsroom'
+    | '/partnerships'
+    | '/sports-management'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AffiliatesRoute: typeof AffiliatesRoute
+  BroadcastingDigitalMediaRoute: typeof BroadcastingDigitalMediaRoute
+  ConsumerBrandsRoute: typeof ConsumerBrandsRoute
+  ContactRoute: typeof ContactRoute
+  FilmTelevisionRoute: typeof FilmTelevisionRoute
+  NewsroomRoute: typeof NewsroomRoute
+  PartnershipsRoute: typeof PartnershipsRoute
+  SportsManagementRoute: typeof SportsManagementRoute
 }
 
-const rootRouteChildren: RootRouteChildren = {}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliates': {
+      id: '/affiliates'
+      path: '/affiliates'
+      fullPath: '/affiliates'
+      preLoaderRoute: typeof AffiliatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/broadcasting-digital-media': {
+      id: '/broadcasting-digital-media'
+      path: '/broadcasting-digital-media'
+      fullPath: '/broadcasting-digital-media'
+      preLoaderRoute: typeof BroadcastingDigitalMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consumer-brands': {
+      id: '/consumer-brands'
+      path: '/consumer-brands'
+      fullPath: '/consumer-brands'
+      preLoaderRoute: typeof ConsumerBrandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/film-television': {
+      id: '/film-television'
+      path: '/film-television'
+      fullPath: '/film-television'
+      preLoaderRoute: typeof FilmTelevisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsroom': {
+      id: '/newsroom'
+      path: '/newsroom'
+      fullPath: '/newsroom'
+      preLoaderRoute: typeof NewsroomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports-management': {
+      id: '/sports-management'
+      path: '/sports-management'
+      fullPath: '/sports-management'
+      preLoaderRoute: typeof SportsManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AffiliatesRoute: AffiliatesRoute,
+  BroadcastingDigitalMediaRoute: BroadcastingDigitalMediaRoute,
+  ConsumerBrandsRoute: ConsumerBrandsRoute,
+  ContactRoute: ContactRoute,
+  FilmTelevisionRoute: FilmTelevisionRoute,
+  NewsroomRoute: NewsroomRoute,
+  PartnershipsRoute: PartnershipsRoute,
+  SportsManagementRoute: SportsManagementRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
