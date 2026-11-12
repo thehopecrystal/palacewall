@@ -3,7 +3,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/lib/palacewall-content";
-import drumMark from "@/assets/palacewall-drum-mark.png.asset.json";
+import logo from "@/assets/logo.png";
 
 export function PalacewallLayout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ export function PalacewallLayout({ children }: { children: React.ReactNode }) {
       <header className="pw-header">
         <div className="pw-container flex min-h-[5.25rem] items-center justify-between gap-5">
           <Link to="/" className="pw-brand shrink-0" aria-label="Palacewall home">
-            <img src={drumMark.url} alt="" aria-hidden="true" className="pw-brand-mark" />
+            <img src={logo} alt="" aria-hidden="true" className="pw-brand-mark" />
             <span className="flex flex-col leading-tight">
               <span className="font-display text-lg font-semibold text-primary">PALACEWALL</span>
               <span className="text-[.62rem] uppercase text-muted-foreground">Media & Entertainment Ltd.</span>
@@ -68,7 +68,7 @@ export function PalacewallLayout({ children }: { children: React.ReactNode }) {
         <div className="pw-container grid gap-12 py-14 md:grid-cols-[1.2fr_.8fr] md:py-20">
           <div>
             <Link to="/" className="inline-flex items-center gap-3">
-              <img src={drumMark.url} alt="" aria-hidden="true" className="size-11 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" className="size-11 object-contain" />
               <span className="flex flex-col leading-tight">
                 <span className="font-display text-lg font-semibold">PALACEWALL</span>
                 <span className="text-[.62rem] uppercase opacity-70">Media & Entertainment Ltd.</span>
