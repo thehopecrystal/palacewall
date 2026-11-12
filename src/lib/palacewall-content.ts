@@ -15,6 +15,11 @@ export const navigation = [
   { label: "Contact", to: "/contact" as const },
 ];
 
+export const contactDetails = {
+  email: "info@palacewall.com",
+  phone: "+1-416-886-0339",
+} as const;
+
 export const businessInterests = [
   {
     number: "01",
@@ -338,7 +343,7 @@ export const contentPages = {
         { title: "Media, public relations & community", copy: "Media inquiries and community-focused initiatives." },
       ] },
     ],
-    feature: { label: "General inquiries", title: "Official contact details", copy: "Website: www.palacewall.com\nEmail: info@palacewall.com\nTelephone: To be published\nCanadian office address: To be published\nNigerian office address: To be published" },
+    feature: { label: "General inquiries", title: "Official contact details", copy: `Website: www.palacewall.com\nEmail: ${contactDetails.email}\nTelephone: ${contactDetails.phone}\nCanadian office address: To be published\nNigerian office address: To be published` },
     closing: "We look forward to exploring opportunities for professional collaboration.",
     caution: "Telephone and office address details are to be published.",
   },

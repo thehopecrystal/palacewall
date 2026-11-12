@@ -1,7 +1,19 @@
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import type { ContentPage } from "@/lib/palacewall-content";
+import { contactDetails, type ContentPage } from "@/lib/palacewall-content";
+
+function renderContactLinks(copy: string) {
+  return copy.split(/(info@palacewall\.com|\+1-416-886-0339)/g).map((part, index) => {
+    if (part === contactDetails.email) {
+      return <a key={index} href={`mailto:${contactDetails.email}`} className="underline underline-offset-4">{part}</a>;
+    }
+    if (part === contactDetails.phone) {
+      return <a key={index} href={`tel:${contactDetails.phone.replace(/[^+\d]/g, "")}`} className="underline underline-offset-4">{part}</a>;
+    }
+    return part;
+  });
+}
 
 export function PalacewallContentPage({ page }: { page: ContentPage }) {
   let itemNumber = 0;
@@ -61,7 +73,7 @@ export function PalacewallContentPage({ page }: { page: ContentPage }) {
             <p className="pw-kicker !text-sage">{page.feature.label}</p>
             <div className="max-w-3xl">
               <h2 className="font-display text-3xl font-medium leading-tight md:text-5xl">{page.feature.title}</h2>
-              <p className="mt-5 whitespace-pre-line text-base leading-8 opacity-80">{page.feature.copy}</p>
+              <p className="mt-5 whitespace-pre-line text-base leading-8 opacity-80">{renderContactLinks(page.feature.copy)}</p>
               {page.feature.note && <p className="mt-5 border-l border-accent pl-4 text-sm leading-6 opacity-70">{page.feature.note}</p>}
             </div>
           </div>
