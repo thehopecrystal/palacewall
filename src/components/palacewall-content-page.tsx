@@ -83,7 +83,19 @@ export function PalacewallContentPage({ page }: { page: ContentPage }) {
       {page.sections.map((section, sectionIndex) => (
         <section key={section.heading} className={`pw-container py-14 md:py-20 ${sectionIndex > 0 ? "pw-editorial-rule" : ""}`}>
           <div className="grid gap-8 md:grid-cols-[.34fr_1fr] md:gap-14">
-            <h2 className="font-display text-2xl font-medium text-primary md:text-3xl">{section.heading}</h2>
+            <div>
+              <h2 className="font-display text-2xl font-medium text-primary md:text-3xl">{section.heading}</h2>
+              {section.image && (
+                <img
+                  src={section.image}
+                  alt={section.imageAlt ?? ""}
+                  className="mt-6 aspect-[4/3] w-full object-cover"
+                  width={1536}
+                  height={1024}
+                  loading="lazy"
+                />
+              )}
+            </div>
             <div className="grid gap-x-12 sm:grid-cols-2">
               {section.items.map((item) => {
                 itemNumber += 1;

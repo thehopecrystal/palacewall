@@ -2,6 +2,9 @@ import casaJadeWineImage from "@/assets/casa-jade-wine.png.asset.json";
 import edoFacesImage from "@/assets/edofaces-radio.png.asset.json";
 import kayluvasBrandImage from "@/assets/kayluvas-brand.png.asset.json";
 import kayluvasProductImage from "@/assets/kayluvas-products.png.asset.json";
+import broadcastingEditorialImage from "@/assets/palacewall-broadcasting-editorial.jpg";
+import partnershipsEditorialImage from "@/assets/palacewall-partnerships-editorial.jpg";
+import sportsEditorialImage from "@/assets/palacewall-sports-editorial.jpg";
 
 export const navigation = [
   { label: "About", to: "/about" as const },
@@ -90,6 +93,8 @@ export const affiliations = [
 export type ContentSection = {
   heading: string;
   items: { title: string; copy: string }[];
+  image?: string;
+  imageAlt?: string;
 };
 
 export type BrandShowcaseItem = {
@@ -181,7 +186,7 @@ export const contentPages = {
       "Our vision is to contribute to the professional development of athletes and sporting enterprises while promoting opportunities for international exposure and commercial growth.",
     ],
     sections: [
-      { heading: "Areas of interest", items: [
+      { heading: "Areas of interest", image: sportsEditorialImage, imageAlt: "Young footballers training together on a Lagos pitch", items: [
         { title: "Athlete development", copy: "Supporting emerging athletes as they develop their skills, pursue professional pathways, and access appropriate training and development resources." },
         { title: "Athlete representation & career management", copy: "Developing professional athlete management and representation services, subject to applicable licensing and sporting regulations." },
         { title: "Sports marketing & sponsorship", copy: "Exploring commercial relationships between athletes, sporting organizations, corporate sponsors, and consumer brands." },
@@ -202,7 +207,7 @@ export const contentPages = {
       "We aim to develop platforms that reflect diverse perspectives while encouraging informative, engaging, and responsible communication.",
     ],
     sections: [
-      { heading: "Media interests", items: [
+      { heading: "Media interests", image: broadcastingEditorialImage, imageAlt: "Edo Faces Radio presenters recording a studio conversation", items: [
         { title: "Online radio", copy: "Internet-based radio programming featuring entertainment, music, cultural discussions, interviews, and community-focused content." },
         { title: "Podcast productions", copy: "Original audio and video podcasts covering society, culture, current affairs, entertainment, business, and other subjects of public interest." },
         { title: "Digital television & video", copy: "Audiovisual programs developed for online audiences and digital distribution platforms." },
@@ -289,7 +294,7 @@ export const contentPages = {
       "Our international business interests include strategic partnerships, brand development, commercial representation, sourcing relationships, and market expansion.",
     ],
     sections: [
-      { heading: "Areas of collaboration", items: [
+      { heading: "Areas of collaboration", image: partnershipsEditorialImage, imageAlt: "Nigerian and Canadian business professionals meeting in Lagos", items: [
         { title: "Film & entertainment", copy: "Opportunities involving production, co-production, creative development, financing, and content distribution." },
         { title: "Sports industry", copy: "Relationships involving talent development, sporting institutions, professional services, sponsorship, and sports-related commercial activities." },
         { title: "Product development & manufacturing", copy: "Exploring relationships with qualified manufacturers, product developers, packaging specialists, and quality assurance providers." },
