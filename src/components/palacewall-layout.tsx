@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Mail, Menu, Phone, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { navigation } from "@/lib/palacewall-content";
+import { contactDetails, navigation } from "@/lib/palacewall-content";
 import logo from "@/assets/logo.png";
 
 export function PalacewallLayout({ children }: { children: React.ReactNode }) {
@@ -76,6 +76,14 @@ export function PalacewallLayout({ children }: { children: React.ReactNode }) {
             </Link>
             <p className="mt-6 max-w-lg text-sm leading-7 opacity-75">A diversified international enterprise with separately incorporated and affiliated corporate entities in Canada and Nigeria.</p>
             <p className="mt-4 text-xs opacity-65">Canada <span aria-hidden="true">·</span> Nigeria <span aria-hidden="true">·</span> International markets</p>
+            <div className="mt-5 flex flex-col items-start gap-2">
+              <a href={`mailto:${contactDetails.email}`} className="pw-footer-link inline-flex items-center gap-2 py-1 text-sm">
+                <Mail className="size-4" aria-hidden="true" />{contactDetails.email}
+              </a>
+              <a href={`tel:${contactDetails.phone.replace(/[^+\d]/g, "")}`} className="pw-footer-link inline-flex items-center gap-2 py-1 text-sm">
+                <Phone className="size-4" aria-hidden="true" />{contactDetails.phone}
+              </a>
+            </div>
           </div>
           <div className="md:justify-self-end">
             <p className="pw-kicker !text-sage">Explore</p>
